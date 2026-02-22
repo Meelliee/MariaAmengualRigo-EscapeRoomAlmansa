@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaCripta - Escape Rooms</title>
+    <link rel="stylesheet" href="Style.css">
+    <script defer src="IndexJS.js"></script>
+</head>
+<body>
+    <div class="viñeta">
+        <img src="Imagenes\Viñeta.png" alt="viñeta">    
+    </div>
+    <header class="nav">
+        <div class="logo">
+            <img src="" alt="imagen Logo">
+        </div>
+        <nav class="opcionesNav">
+            <a href="#">Inicio</a>
+            <a href="#">Aventuras</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <!--Aquí vamos a intentar hacer el carrusel-->
+    <div class="carrusel">
+            <button class="flechaIzquierda">&#60;</button>
+            <button class="flechaDerecha">&#62;</button>
+    
+            <!-- Primera portada del carrusel-->
+            <section class="capa capaActiva">
+                <!--Quiero intentar crear una sensación de 2.5d, con capas-->
+                <div class="capaFondo" data-depth="0.05" style="background-image: url(Imagenes\FondoCastillo.png);"></div>
+                <div class="capaIntermedia" data-depth="0.15"></div>
+                <div class="capaFrontal" data-depth="0.3" style="background-image: url(Imagenes\Silueta.png);"></div>
+
+                <div class="contenido">
+                    <span class="subtitulo">Categoría: Thriller/Acción</span>
+                    <h1>Oscuridad del Castillo</h1>
+                    <p>Cuando la peste devora la ciudad, solo quienes se atreven a cruzar la oscuridad
+                    pueden aspirar a un nuevo amanecer.
+                    </p>
+                    <button>Más información</button>
+                </div>
+            </section>
+    
+
+
+         <!-- Segunda portada del carrusel-->
+            <section class="capa">
+                <div class="capaFondo" data-depth="0.05" style="background-image: url(Imagenes\FondoPantano.png)"></div>
+                <div class="capaFrontal" data-depth="0.3" style="background-image: url()"></div>
+
+                <div class="contenido">
+                    <span class="subtitulo">Categoría: Misterio/Fantasía</span>
+                    <h1>El susurro de las aguas</h1>
+                    <p>Donde el agua cubrió un pueblo, nació un misterio... y ahora os invita a descubrir la historia
+                    que hubo detrás de todo eso.
+                    </p>
+                    <button>Más información</button>
+                </div>
+            </section>
+
+
+         <!-- Tercera portada del carrusel-->
+            <section class="capa">
+                <div class="capaFondo" data-depth="0.05" style="background-image: url(Imagenes\FondoExorcismo.png)"></div>
+                <div class="capaFrontal" data-depth="0.3" style="background-image: url(Imagenes\Niña.png)"></div>
+
+                <div class="contenido">
+                    <span class="subtitulo">Categoría: Horror/Terror</span>
+                    <h1>El susurro de las aguas</h1>
+                    <p>Lo que quedó a mitad no duerme...aún respira oculto, aguardando el momento de reclamar lo que una
+                    vez le fue negado.
+                    </p>
+                    <button>Más información</button>
+                </div>
+            </section>
+    </div>
+
+    <footer></footer>
+
+</body>
+</html>

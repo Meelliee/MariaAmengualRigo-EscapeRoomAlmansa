@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: arial, sans-serif;
+    background: black;
+    overflow: hidden;
+    color: white;
+}
+
+.viñeta{
+    opacity: 0.75;
+}
+
+.nav{
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 4em;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);   
+    z-index: 100;
+    top: 2em;
+}
+
+.nav img{
+    height: 8em;
+}
+
+/*Intento de partir las palabras con una raya al poner el cursor encima*/
+
+.opcionesNav a{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 0.9rem;
+    letter-spacing: 0.43em;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.opcionesNav a:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.opcionesNav a:hover:after{
+    transform: scaleX(1);
+}
+
+
+
+
+/*Para el carrusel*/
+.carrusel{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/*Para el titulo y todo lo que sería el texto del carrusel:*/
+.capa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: white;
+}
+
+.capaActiva{
+    opacity: 1;
+    z-index: 2;
+}
+
+.capaFondo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*Para los botones*/
+button{
+    padding: 1em 1.5em;
+    border: 0.01em solid white;
+    background: transparent;
+    cursor: pointer;
+    letter-spacing: 0.2em;
+    border-radius: 55%;
+}
+
+button:hover{
+    background: white;
+    color: black;
+}
+
+.flechaDerecha, .flechaIzquierda{
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+    opacity: 0.6;
+
+}
+.flechaDerecha{
+    left: 85%;
+}
