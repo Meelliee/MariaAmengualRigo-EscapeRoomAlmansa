@@ -72,7 +72,7 @@ window.addEventListener("scroll", ()=>{
         //El problema de lo anterior es que es como que se recorta antes de lo que quiero y me deja un espacio negro del background demasiado ancho. 
         //Intento poner un limite para que eso no me pase
 
-        let movimiento=recta.top*0.15;
+        let movimiento=recta.top*0.3;
 
         const limite = 50; /*Esto son los px que sube o que baja y pongo condicionales para los limites*/
         if(movimiento>limite) movimiento=limite;
