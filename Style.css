@@ -77,6 +77,7 @@ body{
 .opcionesNav a:hover{
     color: rgb(253, 183, 92);   
     text-decoration: line-through;
+
 }
 
 /*Empezando con la tortura del carrusel*/
@@ -92,7 +93,7 @@ body{
     overflow: hidden;
 }
 
-/*El largo del carrusel*/
+/*El largo del carrusel, le he puesto carrete como el carrete de una camara*/
 .carrete{
     display: flex;
 }

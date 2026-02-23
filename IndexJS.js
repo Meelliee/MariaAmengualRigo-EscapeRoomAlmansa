@@ -23,8 +23,7 @@ const diapositivas=[
         titulo: "El exorcismo de Almansa",
         texto: "Cuando la peste devore la ciudad, solo quienes se atreven a cruzar la oscuridad pueden aspirar a ver un nuevo amanecer.",
         boton: "Más información"
-    }
-    
+    } 
 ];
 
 /*Seguramente no sea la forma más eficiente, pero es la única que se me ha ocurrido porque no tengo más cabeza*/
@@ -34,8 +33,10 @@ const spantexto = document.querySelector(".subtitulo");
 const titulo = document.querySelector(".contenido h1");
 const parrafo = document.querySelector(".contenido p");
 const boton = document.querySelector(".contenido button");
+
 const botonIzq = document.querySelector(".flechaIzquierda");
 const botonDer = document.querySelector(".flechaDerecha");
+
 
 let indice = 0;
 
@@ -60,6 +61,9 @@ botonIzq.addEventListener("click",()=>{
 });
 
 
+
+
+
 /*Se me ha ocurrido la brillante idea de intentar hacer una pequeña animación con las imagenes de las secciones*/
 const secciones = document.querySelectorAll(".seccion");
 window.addEventListener("scroll", ()=>{
@@ -81,4 +85,22 @@ window.addEventListener("scroll", ()=>{
     });
 });
 
+
+
+/*Para intentar hacer el movimiento de la capa del fondo del carrusel */
+const capaArriba = document.querySelector(".carrusel");
+const limite=50;
+
+carrusel.addEventListener("mousemove", (e)=>{
+    fondoCarrusel.forEach(capaArriba=>{
+        const imagen= capaArriba.querySelector("img");
+        const recta = capaArriba.getBoundingClientRect();
+
+
+        let movimientoDer = recta.right*0.3;
+            if(movimientoDer>limite) movimientoDer=limite;
+            if(movimientoDer<-limite) movimientoDer=-limite;
+        imagen.style.transform = `translateX(calc(-50% + ${movimientoDer}px))`;
+    })
+});
 
