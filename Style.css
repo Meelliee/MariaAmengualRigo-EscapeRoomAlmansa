@@ -2,129 +2,279 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: black;
 }
 
 body{
-    font-family: arial, sans-serif;
-    background: black;
-    overflow: hidden;
-    color: white;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background:black;
+    color: rgb(180, 180, 180);
+}
+
+.pagina{
+    position: relative;
 }
 
 .viñeta{
-    opacity: 0.75;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    pointer-events: none;
+    z-index: 9999;
 }
 
+.viñeta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+}
+
+/*Nav*/
 .nav{
     position: fixed;
+    margin: 0 0 0 0;
+    height: 6em;
     width: 100%;
-    height: 5em;
+    z-index: 500;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    border-bottom: 0.1em solid rgb(22, 21, 21);
+}
+
+.estructuraNav{
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding:0 4em;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);   
-    z-index: 100;
-    top: 2em;
+    justify-items: space-between;
+    gap: 4em;
 }
 
-.nav img{
+.nav .logo img{
+    width: 12em;
     height: 8em;
+    margin-top: 2em;
+    margin-left: 2.5em;
+    margin-right: auto;
 }
-
-/*Intento de partir las palabras con una raya al poner el cursor encima*/
+.opcionesNav{
+    display: flex;
+    align-items: center;
+    gap: 6em;
+    margin-right: 5em;
+    margin-left: auto;
+}
 
 .opcionesNav a{
-    position: relative;
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: inline-block;
-    font-size: 0.9rem;
-    letter-spacing: 0.43em;
-    transition: 0.3s;
-    opacity: 0.8;
+    color: rgb(180, 180, 180);
+    letter-spacing: 0.4em;
+    cursor: pointer;
 }
 
-.opcionesNav a:after{
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: 2px;
-    background: white;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+.opcionesNav a:hover{
+    color: rgb(253, 183, 92);   
+    text-decoration: line-through;
 }
 
-.opcionesNav a:hover:after{
-    transform: scaleX(1);
-}
-
-
-
-
-/*Para el carrusel*/
+/*Empezando con la tortura del carrusel*/
 .carrusel{
     position: relative;
-    height: 100vh;
+    width: 100%;
     overflow: hidden;
 }
 
-
-/*Para el titulo y todo lo que sería el texto del carrusel:*/
-.capa{
-    position: absolute;
+/*No queremos que las diapositivas salgan de la vista*/
+.vista{
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    color: white;
+    overflow: hidden;
 }
 
-.capaActiva{
-    opacity: 1;
-    z-index: 2;
+/*El largo del carrusel*/
+.carrete{
+    display: flex;
+}
+
+.diapositiva{
+    position: relative;
+    flex: 0 0 100%;
+    height: 100vh;
 }
 
 .capaFondo{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
 }
 
-
-/*Para los botones*/
-button{
-    padding: 1em 1.5em;
-    border: 0.01em solid white;
-    background: transparent;
-    cursor: pointer;
-    letter-spacing: 0.2em;
-    border-radius: 55%;
-}
-
-button:hover{
-    background: white;
-    color: black;
-}
-
-.flechaDerecha, .flechaIzquierda{
+.capaArriba{
     position: absolute;
-    top: 55%;
-    transform: translateY(-50%);
-    font-size: 4rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    z-index: 20;
-    opacity: 0.6;
-
+    right: 6%;
+    height: auto;
+    bottom: 0;
+    top: auto;
+    left: auto;
+    z-index: 2;
+    height: 65%;
 }
+
+.contenido{
+    position: absolute;
+    left: 10%;
+    bottom: 14%;
+    z-index: 3;
+    max-width: 32.5rem; /*son unos 520px*/
+}
+.contenido p{
+    width: 70%;
+    color: rgb(223, 224, 226);
+}
+.contenido h1{
+    color: white;
+}
+.contenido span{
+    color: rgb(189, 189, 189);
+}
+
+.contenido button{
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: transparent;
+    border: 1px solid rgb(255, 242, 242);
+    border-radius: 5%;
+    color: rgb(212, 212, 212);
+    cursor: pointer;
+    margin-top: 2em;
+}
+
+.contenido button:hover{
+    box-shadow: 0 0 15px 2px rgb(63, 110, 172);
+}
+
+.flecha{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 0.06rem solid rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: lighter;
+}
+
+.flechaIzquierda{
+    left: 2.5%;
+    right: auto;
+}
+
 .flechaDerecha{
-    left: 85%;
+    right: 2.5%;
+    left: auto;
+}
+.flecha:hover{
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*Diseño de las secciones*/
+.seccion{
+    position: relative;
+    height: 30em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5%;
+}
+
+.seccion>img{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 180%;
+    object-fit: cover;
+    transform: translateY(-50%); /*Intento buscar el centro*/
+}
+
+.seccion .info{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.seccion h2{
+    color: white;
+   margin-bottom: 0.5em;
+   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+}
+
+/*Para el boton de las secciones*/
+.seccion .info button{
+    padding: 1em 2em;
+    border: 0.1em solid white;
+    border-radius: 0.3em;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+/*Meto una pequeña transición hacia arriba*/
+.seccion .info button:hover{
+    box-shadow: 0 0 15px 2px black;
+    transition: 0.3s ease;
+    transform: translateY(-0.1em);
+}
+
+/*Footer*/
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4em 1.5em 3em;
+    margin-bottom: 5em;
+}
+
+.contenidoFooter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65em;
+}
+
+.contenidoFooter img{
+    width: 12em;
+    height: 8em;
+    display: inline-block;
+}
+
+.fraseInvitadora{
+    font-family: impact;
+    letter-spacing: 0.3em;
+    border-right-style: ridge;
+    color: rgb(172, 108, 66);
+}
+
+footer p{
+    color: rgb(196, 193, 153);
+    font-family: 'Courier New', Courier, monospace;
+}
+.mail{
+    color: rgb(210, 210, 210);
+    text-decoration: none;
+}
+.mail:hover{
+    text-decoration: underline;
 }
