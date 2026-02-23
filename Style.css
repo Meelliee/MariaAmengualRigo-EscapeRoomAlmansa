@@ -183,7 +183,18 @@ body{
     background: rgba(0, 0, 0, 0.4);
 }
 
+/*Separador*/
+.separador{
+    width: 100%;
+    height: 100%;
+}
 
+.separador img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 0.6em;
+}
 
 /*Diseño de las secciones*/
 .seccion{
