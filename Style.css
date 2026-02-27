@@ -80,7 +80,7 @@ body{
 }
 
 /*Empezando con la tortura del carrusel*/
-.carrusel, .banner img{
+.carrusel{
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -193,7 +193,7 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin-top: 0.6em;
+    margin-bottom: 0;
 }
 
 
@@ -206,7 +206,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5%;
+    margin-top: 0;
+    margin-bottom: 0.2em;
 }
 
 .seccion>img{
@@ -232,31 +233,33 @@ body{
 }
 
 /*Para el boton de las secciones*/
-.seccion .info button{
+.seccion .info a, .introduccion a{
     padding: 1em 2em;
     border: 0.1em solid white;
     border-radius: 0.3em;
     background-color: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255);
     font-weight: bolder;
+    display: block;
     cursor: pointer;
+    text-decoration: none;
 }
 
 /*Meto una pequeña transición hacia arriba*/
-.seccion .info button:hover{
+.seccion .info a:hover, , .introduccion a{
     box-shadow: 0 0 15px 2px black;
     transition: 0.3s ease;
     transform: translateY(-0.1em);
 }
 
 /*Footer*/
-footer{
+footer, .historiaSeccion, .historiaSeccionInversa{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 4em 1.5em 3em;
+    padding: 2em 1.5em 3em;
     margin-bottom: 5em;
 }
 
@@ -280,7 +283,7 @@ footer{
     color: rgb(172, 108, 66);
 }
 
-footer p{
+footer p, .historiaSeccion p, .historiaSeccionInversa{
     color: rgb(196, 193, 153);
     font-family: 'Courier New', Courier, monospace;
 }
@@ -292,11 +295,22 @@ footer p{
     text-decoration: underline;
 }
 
+
+
+
+
 /*Añadidos del pantano*/
 .main{
     color: white;
+    width: 100%;
+    height: 100%;
 }
 
+.banner{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
 
 #contenidoPantano{
     text-align: center;
@@ -312,6 +326,10 @@ footer p{
     justify-content: space-around;
     gap: 1em;
 }
+.introduccion{
+    display: flex;
+    flex-direction: column;
+}
 
 .infoSeccion{
     border: 0.1em solid white;
@@ -321,5 +339,3 @@ footer p{
     border-radius: 0.5em;
 
 }
-
-/*Voy a Cenar*/
