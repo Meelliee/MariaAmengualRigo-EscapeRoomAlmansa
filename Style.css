@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: black;
 }
 
 body{
@@ -81,7 +80,7 @@ body{
 }
 
 /*Empezando con la tortura del carrusel*/
-.carrusel{
+.carrusel, .banner img{
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -292,3 +291,35 @@ footer p{
 .mail:hover{
     text-decoration: underline;
 }
+
+/*Añadidos del pantano*/
+.main{
+    color: white;
+}
+
+
+#contenidoPantano{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contenidoPantano .infoSeccionPantano{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+.infoSeccion{
+    border: 0.1em solid white;
+    padding: 0.3em;
+    text-align: center;
+    color: white;
+    border-radius: 0.5em;
+
+}
+
+/*Voy a Cenar*/
