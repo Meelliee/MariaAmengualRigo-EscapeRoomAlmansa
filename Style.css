@@ -58,26 +58,29 @@ body, .main{
     margin-left: 2.5em;
     margin-right: auto;
 }
-.opcionesNav{
+/*Quiero hacer un desplegable en el nav, asi que uso mejor las listas*/
+.menu{
     display: flex;
+    gap: 3em;
     align-items: center;
-    gap: 6em;
-    margin-right: 5em;
-    margin-left: auto;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.desplegableAventuras{
+    position: relative;
 }
 
-.opcionesNav a{
-    text-decoration: none;
-    color: rgb(180, 180, 180);
-    letter-spacing: 0.4em;
-    cursor: pointer;
+.desplegado{
+    position: absolute;
+    top: 250%;
+    left: 0;
+    list-style-type: none;
+    margin: 0.3em 0 0;
+    padding: 0.3em 0;
+    background: rgba(29, 41, 58, 0.74);
 }
 
-.opcionesNav a:hover{
-    color: rgb(253, 183, 92);   
-    text-decoration: line-through;
-
-}
 
 /*Empezando con la tortura del carrusel*/
 .carrusel{

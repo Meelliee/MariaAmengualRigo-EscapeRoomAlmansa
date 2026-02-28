@@ -2,18 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Maria Amengual Rigo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaCripta - Escape Rooms</title>
     <link rel="stylesheet" href="Style.css">
     <script defer src="IndexJS.js"></script>
+   
 </head>
 <body>
     <div class="pagina">
         <div class="viñeta" id="viñeta">
             <img src="Imagenes/Viñeta.png" alt="viñeta">    
         </div>
-
-        <!--Establezco un grid para la estructura de la pagina-->
         
         <div class="Contenedor">
             <header class="nav">
@@ -22,9 +22,18 @@
                     <img src="Imagenes\Logo.png" alt="imagen Logo">
                 </div>
                 <nav class="opcionesNav">
-                    <a href="#">Inicio</a>
-                    <a href="#">Aventuras</a>
-                    <a href="#">Contacto</a>
+                    <ul class="menu">
+                        <li><a href="#">Inicio</a></li>
+                        <li class="desplegableAventuras">
+                            <a href="#1">Aventuras</a>
+                            <ul class="desplegado">
+                                <li><a href="">Oscuridad del Castillo</a></li>
+                                <li><a href="PruebaPantano.html">El susurro de las aguas</a></li>
+                                <li><a href="#">Exorcismo de Almansa</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
                 </nav>
             </div>    
             </header>
@@ -52,7 +61,7 @@
             <div class="separador">
                 <img src="Imagenes/Separador.JPG" alt="imagen que separa el carrusel y las secciones">
             </div>
-            <section class="seccion">
+            <section class="seccion" id="1">
                 <img src="Imagenes/SeccionCastillo.png">
                 <div class="info">
                     <h2>Oscuridad del Castillo</h2>
