@@ -58,7 +58,18 @@ body, .main{
     margin-left: 2.5em;
     margin-right: auto;
 }
+
+
+
+
+
 /*Quiero hacer un desplegable en el nav, asi que uso mejor las listas*/
+.opcionesNav{
+    margin-right: 5%;
+    display: block;
+    margin-left: auto;
+}
+
 .menu{
     display: flex;
     gap: 3em;
@@ -66,12 +77,20 @@ body, .main{
     list-style-type: none;
     margin: 0;
     padding: 0;
+    
 }
 
 .menu li a{
     text-decoration: none;
     color: antiquewhite;
     font-weight: bolder;
+    letter-spacing: 0.3em;
+}
+
+.menu li a:hover{
+    text-decoration: line-through;
+    letter-spacing: 0.3em;
+    color: rgb(255, 183, 74);
 }
 
 .menu li details{
@@ -96,7 +115,8 @@ body, .main{
     text-decoration: none;
     text-align: center;
     color: black;
-    background: rgba(19, 24, 32, 0.842);
+    background: rgba(19, 24, 32, 0.384);
+    
 }
 
 .desplegableAventuras:hover .desplegado{
@@ -121,6 +141,14 @@ body, .main{
     color: rgb(153, 64, 255);
     text-shadow: 0.1em 0.1em 0 black;
 }
+
+
+
+
+
+
+
+
 
 /*Empezando con la tortura del carrusel*/
 .carrusel{
@@ -171,15 +199,33 @@ body, .main{
     z-index: 3;
     max-width: 32.5rem; /*son unos 520px*/
 }
+
+#contenidoPantano{
+    position: absolute;
+    left: 10%;
+    bottom: 14%;
+    z-index: 3;
+    max-width: 80%;
+}
+
 .contenido p{
     width: 70%;
     color: rgb(223, 224, 226);
 }
 .contenido h1{
     color: white;
+    margin-bottom: 5%;
 }
-.contenido span{
+
+.contenido #parrafo{
     color: rgb(189, 189, 189);
+    margin-top: 3%;
+    width: 100%;
+    padding: 2em;
+    background: rgba(8, 28, 44, 0.178); 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 0px solid;
+    border-radius: 50em;
 }
 
 .contenido button{
@@ -226,6 +272,12 @@ body, .main{
     background: rgba(0, 0, 0, 0.4);
 }
 
+
+
+
+
+
+
 /*Separador*/
 .separador{
     width: 100%;
@@ -238,6 +290,10 @@ body, .main{
     object-fit: cover;
     margin-bottom: 0;
 }
+
+
+
+
 
 
 
@@ -310,6 +366,14 @@ body, .main{
 
 }
 
+
+
+
+
+
+
+
+
 /*Footer*/
 footer, .historiaSeccion, .historiaSeccionInversa{
     width: 100%;
@@ -357,27 +421,31 @@ footer p, .historiaSeccion p, .historiaSeccionInversa{
 
 
 
+/*PAGINA PANTANO*/
 /*Añadidos del pantano*/
-.banner{
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
+
+#contenidoPantano{
+    text-align: center;
 }
 
-#contenidoPantano, .introduccion{
-    text-align: center;
-    width: 100%;
+#contenidoPantano .infoSeccionPantano{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 1em;
 }
+
+#contenidoPantano .infoSeccion{
+    width: 100%;
+    padding: 1em;
+}
+
 
 .introduccion .historiaSeccion, .introduccion .historiaSeccionInversa{
     height: 1em;
     padding: 4em 4em 0em 4em;
 }
 
-#contenidoPantano .infoSeccionPantano, .botones{
+.botones{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -386,11 +454,11 @@ footer p, .historiaSeccion p, .historiaSeccionInversa{
 }
 
 
-.infoSeccion{
-    border: 0.1em solid white;
-    padding: 0.3em;
-    text-align: center;
-    color: rgb(180, 26, 26);
-    border-radius: 0.5em;
-    width: 100%;
+#contenidoPantano .infoSeccionPantano .infoSeccion{
+    background: rgba(0, 0, 0, 0.425);
+    border: 1px solid white;
+    border-radius: 1em;
+
 }
+
+

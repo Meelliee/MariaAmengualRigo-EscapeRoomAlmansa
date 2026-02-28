@@ -20,10 +20,19 @@
                 <img src="Imagenes\Logo.png" alt="imagen Logo">
             </div>
             <nav class="opcionesNav">
-                <a href="index.html">Inicio</a>
-                <a href="#">Aventuras</a>
-                <a href="#">Contacto</a>
-            </nav> 
+                    <ul class="menu"> <!--Creo que me he complicado de mas, voy a intentar hacerlo de otra forma-->
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="desplegableAventuras">
+                            <a href="index.html#1">Aventuras</a>
+                                <ul class="desplegado">
+                                    <li class="rojo"><a href="">Oscuridad del Castillo</a></li>
+                                    <li class="azul"><a href="PruebaPantano.html">El susurro de las aguas</a></li>
+                                    <li class="lila"><a href="#">Exorcismo de Almansa</a></li>
+                                </ul>
+                        </li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
         </header>
     </div>
 <!--Me interesa reutilizar la estructura de css asi que mantengo la estructura html aunque no haya carrusel en esta seccion-->
@@ -44,11 +53,11 @@
                         <p>Duración aproximada: 20 minutos</p>
                     </div>
                 </div>
-                <span>Dicen que, cuando la luna llena se refleja en las aguas del pantano de Almansa, el pasado despierta..
+                <p id="parrafo"> "Dicen que, cuando la luna llena se refleja en las aguas del pantano de Almansa, el pasado despierta..
                 Susurros, luces y sombras emergen cada noche, reclamando ser escuchados.
                 Un mapa olvidado y el diario de un viejo guardián han llegado a vuestras manos.
-                Ahora, el pantano os llama… y no todos regresan de él.
-                </span>
+                Ahora, el pantano os llama… y no todos regresan de él.""
+                </p>
             </div>
         </article>
 
