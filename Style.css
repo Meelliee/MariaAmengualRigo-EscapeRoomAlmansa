@@ -67,20 +67,60 @@ body, .main{
     margin: 0;
     padding: 0;
 }
+
+.menu li a{
+    text-decoration: none;
+    color: antiquewhite;
+    font-weight: bolder;
+}
+
+.menu li details{
+    display: inline-block;
+}
+
 .desplegableAventuras{
     position: relative;
 }
 
 .desplegado{
+    display: none;
     position: absolute;
-    top: 250%;
-    left: 0;
     list-style-type: none;
-    margin: 0.3em 0 0;
-    padding: 0.3em 0;
-    background: rgba(29, 41, 58, 0.74);
+    width: 15em;
+    border: 1px solid black;
 }
 
+.desplegado a{
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background: rgba(19, 24, 32, 0.842);
+}
+
+.desplegableAventuras:hover .desplegado{
+    display: block;
+}
+
+.desplegado a:hover{
+    background: rgba(24, 26, 49, 0.486);
+    display: block;
+}
+
+.desplegado .rojo a:hover{
+    color: red;
+    text-shadow: 0.1em 0.1em 0 black;
+}
+
+.desplegado .azul a:hover{
+    color: rgb(62, 139, 255);
+    text-shadow: 0.1em 0.1em 0 black;
+}
+.desplegado .lila a:hover{
+    color: rgb(153, 64, 255);
+    text-shadow: 0.1em 0.1em 0 black;
+}
 
 /*Empezando con la tortura del carrusel*/
 .carrusel{
