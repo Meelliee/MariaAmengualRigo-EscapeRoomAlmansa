@@ -78,7 +78,7 @@ window.addEventListener("scroll", ()=>{
 
         let movimiento=rect.top*0.3;
 
-        const limite = 50; /*Esto son los px que sube o que baja y pongo condicionales para los limites*/
+        const limite = 50; /*Esto son los px que sube o que baja y pongo condicionales para los limites para que cuando baje no se vea el background de fondo y que se quede la imagen*/
         if(movimiento>limite) movimiento=limite;
         if(movimiento<-limite) movimiento=-limite;
         imagen.style.transform=`translateY(calc(-50% + ${movimiento}px))`;
@@ -100,7 +100,7 @@ carrusel.addEventListener("mousemove", (e)=>{
         let movimientoDer = recta.right*0.3;
             if(movimientoDer>limite) movimientoDer=limite;
             if(movimientoDer<-limite) movimientoDer=-limite;
-        imagen.style.transform = `translateX(calc(-50% + ${movimientoDer}px))`;
+        imagen.style.transform =`translateX(calc(-50% + ${movimientoDer}px))`;
     })
 });
 
