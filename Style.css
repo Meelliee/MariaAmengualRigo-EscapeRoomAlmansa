@@ -269,7 +269,7 @@ body, #index{
 
 .separador img{
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     margin-bottom: 0;
 }
@@ -458,6 +458,8 @@ footer p, .historiaSeccion p, .historiaSeccionInversa{
     gap: 6em;
     width: 100%;
     height: 100%;
+    padding-bottom: 0;
+    padding-top: 4em;
 }
 .historiaSeccion p{
     padding-left: 6em;
@@ -471,11 +473,13 @@ footer p, .historiaSeccion p, .historiaSeccionInversa{
     gap: 4em;
     width: 100%;
     height: 100%;
+    
 }
 
 .historiaSeccionInversa{
     padding-left: auto;
     padding-right: 6em;
+    padding-bottom: 0;
 }
 
 
@@ -499,7 +503,20 @@ footer p, .historiaSeccion p, .historiaSeccionInversa{
     background: rgba(0, 0, 0, 0.425);
     border: 1px solid white;
     border-radius: 1em;
-
+    
 }
 
+/*No me gusta el titulo asi, me parece algo soso y las letras tampoco me llaman, asi que con tu permiso voy a buscar una forma de hacerlo
+más estético*/
 
+#contenidoPantano h1{
+    background: linear-gradient(90deg,rgb(23, 41, 56), rgb(17, 6, 49), black);
+    /*Para que se vea el gradiante a través de las letras transparentes:*/
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: capitalize;
+    letter-spacing: 0.3em;
+    text-shadow: 0px 0px 9px #0e2a4d;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Courier, monospace;
+}
