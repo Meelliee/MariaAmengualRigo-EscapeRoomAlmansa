@@ -13,7 +13,7 @@ const diapositivas=[
         arriba: "Imagenes/Espiritu.png",
         categoria: "Categoría: Misterio/Fantasía",
         titulo: "El susurro de las aguas",
-        texto: "Cuando la peste devore la ciudad, solo quienes se atreven a cruzar la oscuridad pueden aspirar a ver un nuevo amanecer.",
+        texto: "Donde el agua cubrió un pueblo, nació un misterio... y ahora os invita a descubrir la historia que hubo detrás de todo eso.",
         boton: "Más información"
     },
     {
@@ -21,7 +21,7 @@ const diapositivas=[
         arriba: "Imagenes/Niña.png",
         categoria: "Categoría: Terror/Horror",
         titulo: "El exorcismo de Almansa",
-        texto: "Cuando la peste devore la ciudad, solo quienes se atreven a cruzar la oscuridad pueden aspirar a ver un nuevo amanecer.",
+        texto: "Lo que quedó a mitad no duerme...aún respira oculto, aguardando el momento de reclamar lo que una vez le fue negado.",
         boton: "Más información"
     } 
 ];

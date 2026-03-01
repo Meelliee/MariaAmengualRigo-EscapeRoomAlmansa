@@ -426,11 +426,13 @@ footer p, .historiaSeccion p, .historiaSeccionInversa{
     align-items: center;
     gap: 1em;
     width: 100%;
+    
 }
 
 #contenidoPantano .infoSeccion{
     width: 100%;
     padding: 1em;
+    
 }
 
 .contenido #parrafo{
@@ -507,6 +509,10 @@ footer p, .historiaSeccion p, .historiaSeccionInversa{
     backdrop-filter: blur(0.2em);
     border: 1px solid rgba(255, 255, 255, 0.075);
     text-shadow: 0.1em 0.1em 0.3em black;
+}
+
+.infoSeccion span{
+    color: rgb(21, 156, 138);
 }
 
 
