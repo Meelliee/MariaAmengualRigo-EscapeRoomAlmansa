@@ -50,16 +50,17 @@ function vistaDiapositivas(){
     boton.textContent = diapositiva.boton;
 }
 
-botonDer.addEventListener("click",()=>{
-    indice = (indice + 1) % diapositivas.length;
-    vistaDiapositivas();
-});
+if(botonDer != null && botonIzq !=null){
+    botonDer.addEventListener("click",()=>{
+        indice = (indice + 1) % diapositivas.length;
+        vistaDiapositivas();
+    });
 
-botonIzq.addEventListener("click",()=>{
-    indice = ((indice - 1)+diapositivas.length) % diapositivas.length;
-    vistaDiapositivas();
-});
-
+    botonIzq.addEventListener("click",()=>{
+        indice = ((indice - 1)+diapositivas.length) % diapositivas.length;
+        vistaDiapositivas();
+    });
+}
 
 
 
@@ -77,10 +78,6 @@ window.addEventListener("scroll", ()=>{
         //Intento poner un limite para que eso no me pase
 
         let movimiento=rect.top*0.3;
-
-        const limite = 50; /*Esto son los px que sube o que baja y pongo condicionales para los limites para que cuando baje no se vea el background de fondo y que se quede la imagen*/
-        if(movimiento>limite) movimiento=limite;
-        if(movimiento<-limite) movimiento=-limite;
         imagen.style.transform=`translateY(calc(-50% + ${movimiento}px))`;
     });
 });
@@ -89,7 +86,6 @@ window.addEventListener("scroll", ()=>{
 
 /*Para intentar hacer el movimiento de la capa del fondo del carrusel */
 const capaArriba = document.querySelector(".carrusel");
-const limite=50;
 
 carrusel.addEventListener("mousemove", (e)=>{
     fondoCarrusel.forEach(capaArriba=>{
@@ -98,9 +94,18 @@ carrusel.addEventListener("mousemove", (e)=>{
 
 
         let movimientoDer = recta.right*0.3;
-            if(movimientoDer>limite) movimientoDer=limite;
-            if(movimientoDer<-limite) movimientoDer=-limite;
         imagen.style.transform =`translateX(calc(-50% + ${movimientoDer}px))`;
     })
 });
+
+
+/*Quiero que al darle click al boton de Pantano, me aparezca un farol*/
+const acepto=document.getElementById("aceptoBoton");
+const imagen = document.querySelector(".farol");
+
+acepto.addEventListener("click", () =>{
+    imagen.style.display = (imagen.style.display == 'none')? 'inline':'none';
+})
+
+
 

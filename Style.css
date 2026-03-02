@@ -315,7 +315,7 @@ color: white;
 }
 
 /*Para el boton de las secciones*/
-.seccion .info a, .introduccion .botones a{
+.seccion .info a, .introduccion .botones a, .botones button{
     padding: 1em 2em;
     border: 0.1em solid white;
     border-radius: 0.3em;
@@ -558,4 +558,15 @@ más estético*/
     background-size: 200% auto;
     animation: gradientAnimacion 7s linear infinite; /*Usare la misma animacion*/
     box-shadow:  0 0 5px 5px rgb(5, 5, 5);
+}
+
+.farol{
+    width: 4em;
+    height: auto;
+    position: fixed;
+    right: 2em;
+    left: auto;
+    z-index: 99999;
+    bottom: 0em;
+    display: none;
 }
