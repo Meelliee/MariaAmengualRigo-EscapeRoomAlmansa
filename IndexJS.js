@@ -84,20 +84,6 @@ window.addEventListener("scroll", ()=>{
 
 
 
-/*Para intentar hacer el movimiento de la capa del fondo del carrusel */
-const capaArriba = document.querySelector(".carrusel");
-
-carrusel.addEventListener("mousemove", (e)=>{
-    fondoCarrusel.forEach(capaArriba=>{
-        const imagen= capaArriba.querySelector("img");
-        const recta = capaArriba.getBoundingClientRect();
-
-
-        let movimientoDer = recta.right*0.3;
-        imagen.style.transform =`translateX(calc(-50% + ${movimientoDer}px))`;
-    })
-});
-
 
 /*Quiero que al darle click al boton de Pantano, me aparezca un farol*/
 const acepto=document.getElementById("aceptoBoton");
@@ -105,7 +91,7 @@ const imagen = document.querySelector(".farol");
 
 acepto.addEventListener("click", () =>{
     imagen.style.display = (imagen.style.display == 'none')? 'inline':'none';
-})
+});
 
 
 
