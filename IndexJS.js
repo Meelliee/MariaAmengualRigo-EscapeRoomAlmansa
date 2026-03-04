@@ -66,21 +66,7 @@ if(botonDer != null && botonIzq !=null){
 
 
 /*Se me ha ocurrido la brillante idea de intentar hacer una pequeña animación con las imagenes de las secciones*/
-const secciones = document.querySelectorAll(".seccion");
-window.addEventListener("scroll", ()=>{
-    secciones.forEach(seccion=>{
-        const imagen = seccion.querySelector("img");
-        const rect = seccion.getBoundingClientRect();
 
-        //Ajustamos velocidad para que se mueva que solo se me ocurre con transform y translate
-        /*imagen.style.transform = `translateY(${recta.top * 0.2}px)`;*/
-        //El problema de lo anterior es que es como que se recorta antes de lo que quiero y me deja un espacio negro del background demasiado ancho. 
-        //Intento poner un limite para que eso no me pase
-
-        let movimiento=rect.top*0.3;
-        imagen.style.transform=`translateY(calc(-50% + ${movimiento}px))`;
-    });
-});
 
 
 /*Quiero que al darle click al boton de Pantano, me aparezca un farol*/
