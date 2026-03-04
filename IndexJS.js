@@ -83,8 +83,6 @@ window.addEventListener("scroll", ()=>{
 });
 
 
-
-
 /*Quiero que al darle click al boton de Pantano, me aparezca un farol*/
 const acepto=document.getElementById("aceptoBoton");
 const imagen = document.querySelector(".farol");
@@ -94,4 +92,4 @@ acepto.addEventListener("click", () =>{
 });
 
 
-
+/*Ahora quiero que se pueda mover el farol y arrastrar*/
