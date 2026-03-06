@@ -295,11 +295,11 @@ body, #index{
 .seccion>img{
     position: absolute;
     left: 0;
-    top: 50%;
+    top: -50%; 
     width: 100%;
     height: 180%;
     object-fit: cover;
-    transform: translateY(-50%); /*Intento buscar el centro*/
+    display: block;
 }
 
 .seccion .info{

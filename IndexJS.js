@@ -66,6 +66,26 @@ if(botonDer != null && botonIzq !=null){
 
 
 /*Se me ha ocurrido la brillante idea de intentar hacer una pequeña animación con las imagenes de las secciones*/
+const secciones= document.querySelectorAll(".seccion");
+
+
+window.addEventListener("scroll", ()=>{
+    secciones.forEach(seccion =>{
+        const imagenFo = seccion.querySelector("img");
+        const rect = seccion.getBoundingClientRect();
+
+        let movimiento = rect.top * 0.3;
+        let limite = 50;
+        if(movimiento>limite) movimiento=limite;
+        if(movimiento<-limite) movimiento=-limite;
+        imagenFo.style.transform = "translateY(" + movimiento + "px)";
+    
+    
+    /*Vale, si o si necesito poner limites */
+    });
+});
+
+
 
 
 
@@ -76,6 +96,7 @@ const imagen = document.querySelector(".farol");
 acepto.addEventListener("click", () =>{
     imagen.style.display = (imagen.style.display == 'none')? 'inline':'none';
 });
+
 
 
 /*Ahora quiero que se pueda mover el farol y arrastrar*/
