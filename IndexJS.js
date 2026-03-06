@@ -63,6 +63,33 @@ if(botonDer != null && botonIzq !=null){
 }
 
 
+/*El movimiento de las secciones me lleva a la determinacion de si podré mover la 
+imagen de arriba del carrusel y moverlo en el eje x*/
+const carrusel=  document.querySelector(".carrusel");
+const capaArriba = carrusel.querySelector(".capaArriba");
+
+/*Quiero que la imagen siga un poco la direccion del raton */
+carrusel.addEventListener("mousemove", function(e){
+    let posicionRaton = e.clientX;
+    /*Necesitaba saber donde empieza el carrusel*/
+    let posicionCarrusel = carrusel.offsetLeft; 
+    let anchoCarrusel = carrusel.offsetWidth;
+    let centroCarrusel = anchoCarrusel/2;
+
+    let movimientoCapa = posicionRaton - posicionCarrusel;
+    let distanciaCentro = movimientoCapa - centroCarrusel;
+
+    let movimiento = distanciaCentro *0.1;
+
+    capaArriba.style.transform ="translateX(" + movimiento + "px)";
+})
+
+
+
+
+
+
+
 
 
 /*Se me ha ocurrido la brillante idea de intentar hacer una pequeña animación con las imagenes de las secciones*/
