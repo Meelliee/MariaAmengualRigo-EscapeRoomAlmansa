@@ -570,6 +570,7 @@ más estético*/
     bottom: 0em;
     display: none;
     cursor: grab;
+    filter: none; /*He buscado como poder iluminar el farol*/
 }
 
 .letraOculta{

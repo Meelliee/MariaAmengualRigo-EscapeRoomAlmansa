@@ -119,7 +119,13 @@ if(acepto !=null && farolillo!=null){
     acepto.addEventListener("click", () =>{
         farolillo.style.display = (farolillo.style.display == 'none')? 'inline':'none';
     });
-}
+
+    /*He encontrado la manera de hacer que el farol brille y he querido hacer lo mismo que con el boton, basicamente
+    que aplique la propiedad filter drop-shadow para encender o none para apagar el farol. */
+    farolillo.addEventListener("click", () =>
+    farolillo.style.filter=(farolillo.style.filter == 'none')? 'drop-shadow(0 0 50px rgba(255,220,120,0.8))': 'none');
+};
+
 
 /*La idea es crear un mensaje oculto de los textos que estan creados, intento usar drag and drop para esto */
 const farol = document.querySelector(".farol");
