@@ -566,7 +566,12 @@ más estético*/
     position: fixed;
     right: 2em;
     left: auto;
-    z-index: 99999;
+    z-index: 999999;
     bottom: 0em;
     display: none;
+    cursor: grab;
+}
+
+.letraOculta{
+    color: transparent;
 }
