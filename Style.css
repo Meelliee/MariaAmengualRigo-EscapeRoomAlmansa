@@ -367,6 +367,9 @@ footer, .historiaSeccion, .historiaSeccionInversa{
     padding: 2em 1.5em 3em;
     margin-bottom: 5em;
 }
+.historiaSeccionInversa{
+    padding-top: 3em;
+}
 
 .contenidoFooter{
     display: flex;
@@ -388,7 +391,7 @@ footer, .historiaSeccion, .historiaSeccionInversa{
     color: rgb(172, 108, 66);
 }
 
-footer p, .historiaSeccion p, .historiaSeccionInversa{
+footer p, .historiaSeccion p, .historiaSeccionInversa p{
     color: rgb(196, 193, 153);
     font-family: 'Courier New', Courier, monospace;
 }
@@ -573,6 +576,10 @@ más estético*/
     filter: none; /*He buscado como poder iluminar el farol*/
 }
 
-.letraOculta{
-    color: transparent;
+.textoGris{
+    color:gray;
+}
+
+.textoGris .letraOculta{
+    color: red;
 }

@@ -72,7 +72,7 @@ if(botonDer != null && botonIzq !=null){
     /*Quiero que la imagen siga un poco la direccion del raton */
     carrusel.addEventListener("mousemove", function(e){ 
         /*Elimino esto porque me habia ayudado mi chico pero no son cosas que quiero valorar, quiero intentarlo hacerlo por mi misma */
-        let movimiento = e.offsetX *0.002;
+        let movimiento = e.offsetX *0.02;
         /*Al final era muchisimo mas sencillo, aunque si dejo solo el e.offsetx 0.01 se raya, no, se raya igual. Preguntare el lunes*/
         capaArriba.style.transform ="translateX(" + movimiento + "px)";
 })};
@@ -86,19 +86,16 @@ window.addEventListener("scroll", ()=>{
     secciones.forEach(seccion =>{
         const imagenFo = seccion.querySelector("img");
         const rect = seccion.getBoundingClientRect();
-
+    
+    
+        /*Vale, si o si necesito poner limites */
         let movimiento = rect.top * 0.3;
         let limite = 50;
         if(movimiento>limite) movimiento=limite;
         if(movimiento<-limite) movimiento=-limite;
         imagenFo.style.transform = "translateY(" + movimiento + "px)";
-    
-    
-    /*Vale, si o si necesito poner limites */
-    });
-});
-
-
+    })
+})
 
 
 
@@ -118,7 +115,28 @@ if(acepto !=null && farolillo!=null){
 };
 
 
-/*La idea es crear un mensaje oculto de los textos que estan creados, intento usar drag and drop para esto */
-    const farol = document.querySelector(".farol");
-    const mensajeOculto = document.querySelectorAll(".letraOculta");
 
+
+/*La idea es crear un mensaje oculto de los textos que estan creados, intento usar drag and drop para esto */
+    let elementoArrastrado = null;
+    const farol = document.querySelector(".farol");
+    const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
+
+    if(farol!=null  && farolillo.style.filet == 'drop-shadow(0 0 50px rgba(255,220,120,0.8)'){
+    farol.addEventListener("dragstart", function (){
+        elementoArrastrado = farol;
+    });
+
+        for(let parrafo of parrafosHistoria){
+            parrafo.addEventListener("dragover", function (e){
+                e.preventDefault(); 
+                
+                if(elementoArrastrado == farol){
+                    parrafo.classList.add("textoGris")
+                }
+            });
+
+            parrafo.addEventListener("drop", function(e){
+            });
+        }
+    }
