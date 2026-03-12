@@ -71,9 +71,9 @@ if(botonDer != null && botonIzq !=null){
 
     /*Quiero que la imagen siga un poco la direccion del raton */
     carrusel.addEventListener("mousemove", function(e){ 
-        /*Elimino esto porque me habia ayudado mi chico pero no son cosas que quiero valorar, quiero intentarlo hacerlo por mi misma */
-        let movimiento = e.offsetX *0.02;
-        /*Al final era muchisimo mas sencillo, aunque si dejo solo el e.offsetx 0.01 se raya, no, se raya igual. Preguntare el lunes*/
+
+        let movimiento = e.offsetX *0.005;
+        /*Nada, no hay manera de que no pete. Ayuda. No puedo mas.*/
         capaArriba.style.transform ="translateX(" + movimiento + "px)";
 })};
 
@@ -102,17 +102,28 @@ window.addEventListener("scroll", ()=>{
 /*Quiero que al darle click al boton de Pantano, me aparezca un farol*/
     const acepto=document.getElementById("aceptoBoton");
     const farolillo = document.querySelector(".farol");
+    let farolEncendido = false;
 
 if(acepto !=null && farolillo!=null){
     acepto.addEventListener("click", () =>{
-        farolillo.style.display = (farolillo.style.display == 'none')? 'inline':'none';
+        /*Vale, ahora mismo es dificil leer las letras como tal, asi que se me ha ocurrido tornar mi pagina en negro para encontrar las letras con el farol*/
+        farolillo.style.display = "inline";
+        const ocultar = document.querySelector(".oculto");
+        
     });
 
     /*He encontrado la manera de hacer que el farol brille y he querido hacer lo mismo que con el boton, basicamente
     que aplique la propiedad filter drop-shadow para encender o none para apagar el farol. */
-    farolillo.addEventListener("click", () =>
-    farolillo.style.filter=(farolillo.style.filter == 'none')? 'drop-shadow(0 0 50px rgba(255,220,120,0.8))': 'none');
-};
+    farolillo.addEventListener("click", () =>{
+        if(farolEncendido == false){
+            farolillo.style.filter = "drop-shadow(0 0 50px rgba(255,220,120,0.8))";
+            farolEncendido =true; /*Quiero que se revelen las letras solo si el farol esta encendido, asi que vuelvo con los interruptores */
+        }else{
+            farolillo.style.filter="none";
+            farolEncendido = false;
+        }
+    });
+}
 
 
 
@@ -122,7 +133,7 @@ if(acepto !=null && farolillo!=null){
     const farol = document.querySelector(".farol");
     const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
 
-    if(farol!=null  && farol.style.filter == 'drop-shadow(0 0 50px rgba(255,220,120,0.8)'){
+    if(farol!=null){
     farol.addEventListener("dragstart", function (){
         elementoArrastrado = farol;
     });
@@ -131,7 +142,7 @@ if(acepto !=null && farolillo!=null){
             parrafo.addEventListener("dragover", function (e){
                 e.preventDefault(); 
                 
-                if(elementoArrastrado == farol){
+                if(elementoArrastrado == farol && farolEncendido==true){ /*Para que se revelen solo si el farol esta iluminado*/
                     parrafo.classList.add("textoGris")
                 }
             });

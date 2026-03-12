@@ -10,6 +10,9 @@ body, #index{
     background:black;
     color: rgb(180, 180, 180);
 }
+.oculto{
+    opacity: 100;
+}
 
 .pagina{
     position: relative;
