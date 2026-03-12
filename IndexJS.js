@@ -66,17 +66,16 @@ if(botonDer != null && botonIzq !=null){
 /*El movimiento de las secciones me lleva a la determinacion de si podré mover la 
 imagen de arriba del carrusel y moverlo en el eje x*/
 if(botonDer != null && botonIzq !=null){
-    const carrusel=  document.querySelector(".carrusel");
-    const capaArriba = carrusel.querySelector(".capaArriba");
+    const zona=  document.querySelector(".carrusel");
+    const capaArriba = document.querySelector(".capaArriba");
         /*Quiero que la imagen siga un poco la direccion del raton */
-        carrusel.addEventListener("mousemove", function(e){ 
-
-            let movimiento = e.offsetX *0.005;
-            /*Nada, no hay manera de que no pete. Ayuda. No puedo mas.*/
-            capaArriba.style.transform ="translateX(" + movimiento + "px)";
+        zona.addEventListener("mousemove", function(e) { 
+            const rect = zona.getBoundingClientRect();
+    
+            let offsetX = e.clientX - rect.left - 100;
+            capaArriba.style.left = offsetX + "px";
         })
-
-};
+}; /*Asi no se raya la imagen pero se va de la zona, deberia poner unos limites pero no se establecerlos bien */
 
 
 /*Se me ha ocurrido la brillante idea de intentar hacer una pequeña animación con las imagenes de las secciones*/
@@ -130,7 +129,9 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
 
 
 /*La idea es crear un mensaje oculto de los textos que estan creados, intento usar drag and drop para esto */
-    let elementoArrastrado = null;
+/*Vale, el problema de este codigo es que el cursor esta como bloqueado porque obviamente pues no lo estamos soltando,
+Voy a dejar este codigo comentado aunque no lo use, porque tarde un rato y ya me servira para algo. */
+   /*  let elementoArrastrado = null;
     const farol = document.querySelector(".farol");
     const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
 
@@ -144,11 +145,26 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
                 e.preventDefault(); 
                 
                 if(elementoArrastrado == farol && farolEncendido==true){ /*Para que se revelen solo si el farol esta iluminado*/
-                    parrafo.classList.add("textoGris")
-                }
+                 /*   parrafo.classList.add("textoGris")
+               }
             });
+     parrafo.addEventListener("drop", function(e){
+        });
+        } 
 
-            parrafo.addEventListener("drop", function(e){
-            });
-        }
-    }
+    }*/
+
+        /*Voy a intentar que el farol siga al raton en lugar de hacerlo con drag and drop */
+    const farol=document.querySelector(".farol");
+    const zona = document.querySelector(".introduccion");
+
+    zona.addEventListener("mousemove", function(e) {
+        const rect = zona.getBoundingClientRect();
+        let offsetX =e.clientX - rect.left - 25;
+        let offsetY = e.clientY - rect.top - 35;
+
+        farol.style.left = offsetX + "px";
+        farol.style.top = offsetY + "px";
+    });
+
+    /*Como me ha salido guay, voy a intentar mejorar la animación de la capa de arriba, que ahora mismo, se raya*/

@@ -275,6 +275,7 @@ body, #index{
 .separador{
     width: 100%;
     height: 100%;
+    margin-top: 0.2em;
 }
 
 .separador img{
@@ -574,15 +575,12 @@ más estético*/
 }
 
 .farol{
-    width: 4em;
-    height: auto;
-    position: fixed;
-    right: 2em;
-    left: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
     z-index: 999999;
-    bottom: 0em;
     display: none;
-    cursor: grab;
+    width: 4em;
     filter: none; /*He buscado como poder iluminar el farol*/
 }
 
@@ -592,4 +590,8 @@ más estético*/
 
 .textoGris .letraOculta{
     color: red;
+}
+
+.introduccion{
+    position: relative;
 }
