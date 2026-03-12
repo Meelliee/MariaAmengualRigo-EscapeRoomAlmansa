@@ -6,7 +6,7 @@ const diapositivas=[
         categoria: "Categoría: Thriller/Acción",
         titulo:"La oscuridad del Castillo",
         texto: "Cuando la peste devore la ciudad, solo quienes se atreven a cruzar la oscuridad pueden aspirar a ver un nuevo amanecer.",
-        boton: "Más información"
+        enlaces: "index.html"
     },
     {
         fondo: "Imagenes/FondoPantano.png",
@@ -14,7 +14,7 @@ const diapositivas=[
         categoria: "Categoría: Misterio/Fantasía",
         titulo: "El susurro de las aguas",
         texto: "Donde el agua cubrió un pueblo, nació un misterio... y ahora os invita a descubrir la historia que hubo detrás de todo eso.",
-        boton: "Más información"
+        enlaces: "PruebaPantano.html"
     },
     {
         fondo: "Imagenes/FondoExorcismo.png",
@@ -22,7 +22,7 @@ const diapositivas=[
         categoria: "Categoría: Terror/Horror",
         titulo: "El exorcismo de Almansa",
         texto: "Lo que quedó a mitad no duerme...aún respira oculto, aguardando el momento de reclamar lo que una vez le fue negado.",
-        boton: "Más información"
+        enlaces:"index.html"
     } 
 ];
 
@@ -32,7 +32,7 @@ const imgArriba = document.querySelector(".capaArriba");
 const spantexto = document.querySelector(".subtitulo");
 const titulo = document.querySelector(".contenido h1");
 const parrafo = document.querySelector(".contenido p");
-const boton = document.querySelector(".contenido button");
+const boton = document.querySelector(".button");
 
 const botonIzq = document.querySelector(".flechaIzquierda");
 const botonDer = document.querySelector(".flechaDerecha");
@@ -47,7 +47,7 @@ function vistaDiapositivas(){
     spantexto.textContent = diapositiva.categoria;
     titulo.textContent = diapositiva.titulo;
     parrafo.textContent = diapositiva.texto;
-    boton.textContent = diapositiva.boton;
+    boton.href = diapositiva.enlaces;
 }
 
 if(botonDer != null && botonIzq !=null){
@@ -122,7 +122,7 @@ if(acepto !=null && farolillo!=null){
     const farol = document.querySelector(".farol");
     const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
 
-    if(farol!=null  && farolillo.style.filet == 'drop-shadow(0 0 50px rgba(255,220,120,0.8)'){
+    if(farol!=null  && farol.style.filter == 'drop-shadow(0 0 50px rgba(255,220,120,0.8)'){
     farol.addEventListener("dragstart", function (){
         elementoArrastrado = farol;
     });
