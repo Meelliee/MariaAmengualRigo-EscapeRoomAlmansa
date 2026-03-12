@@ -68,14 +68,15 @@ imagen de arriba del carrusel y moverlo en el eje x*/
 if(botonDer != null && botonIzq !=null){
     const carrusel=  document.querySelector(".carrusel");
     const capaArriba = carrusel.querySelector(".capaArriba");
+        /*Quiero que la imagen siga un poco la direccion del raton */
+        carrusel.addEventListener("mousemove", function(e){ 
 
-    /*Quiero que la imagen siga un poco la direccion del raton */
-    carrusel.addEventListener("mousemove", function(e){ 
+            let movimiento = e.offsetX *0.005;
+            /*Nada, no hay manera de que no pete. Ayuda. No puedo mas.*/
+            capaArriba.style.transform ="translateX(" + movimiento + "px)";
+        })
 
-        let movimiento = e.offsetX *0.005;
-        /*Nada, no hay manera de que no pete. Ayuda. No puedo mas.*/
-        capaArriba.style.transform ="translateX(" + movimiento + "px)";
-})};
+};
 
 
 /*Se me ha ocurrido la brillante idea de intentar hacer una pequeña animación con las imagenes de las secciones*/
@@ -103,13 +104,13 @@ window.addEventListener("scroll", ()=>{
     const acepto=document.getElementById("aceptoBoton");
     const farolillo = document.querySelector(".farol");
     let farolEncendido = false;
+    const ocultar = document.querySelector(".oculto");
 
-if(acepto !=null && farolillo!=null){
+if(acepto !=null && farolillo!=null && ocultar!=null){
     acepto.addEventListener("click", () =>{
         /*Vale, ahora mismo es dificil leer las letras como tal, asi que se me ha ocurrido tornar mi pagina en negro para encontrar las letras con el farol*/
         farolillo.style.display = "inline";
-        const ocultar = document.querySelector(".oculto");
-        
+        ocultar.style.display="block";
     });
 
     /*He encontrado la manera de hacer que el farol brille y he querido hacer lo mismo que con el boton, basicamente
