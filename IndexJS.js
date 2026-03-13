@@ -192,13 +192,16 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
                                     palabra.classList.add("visible"); /*Y en lugar de texto, añado la clase visible */
                                     /*Quiero hacer que independientemente de la palabra que salga, se cambie la imagen del anciano por la trampilla*/
                                     
-                                    pista.textContent= "La luz te ha guiado a través de las rocas y una trampilla parece haber aparecido ante ti"
-                                    
-                                    /*Cambiamos el anciano por el cryptex*/
-                                    elGuia.src="Imagenes/trampillaCryptex.png"; 
-                                    elGuia.dataset.password="Draugr";
-                                    pista.textContent= "Fijándote bien en la trampilla, te das cuenta que hay un cryptex.¿Qué palabra introducirás?";
-                                    botonClave.style.display="block";
+                                    if(trampillaActivada==false){
+                                        trampillaActivada=true;
+                                        pista.textContent= "La luz te ha guiado a través de las rocas y una trampilla parece haber aparecido ante ti"
+                                        
+                                        /*Cambiamos el anciano por el cryptex*/
+                                        elGuia.src="Imagenes/trampillaCryptex.png"; 
+                                        elGuia.dataset.password="Draugr";
+                                        pista.textContent= "Fijándote bien en la trampilla, te das cuenta que hay un cryptex.¿Qué palabra introducirás?";
+                                        cryptex.style.display="flex";
+                                    }
                                 }
                             }
                             
@@ -206,6 +209,19 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
             }
         })
     }
+
+
+
+                /*Debe comprobarse la clave*/
+               botonClave.addEventListener("click", function(){
+                    let palabraIntroducida = clave.value;
+                    let correcta = elGuia.dataset.password;
+                    if(palabraIntroducida == correcta){
+                        final.textContent = "Poco a poco, van abriendose las compuertas, parece que tienes algo especial, algo que los antiguos han visto en ti y te están guiando a que puedas salvarnos a todos de este oscuro maleficio";
+                    } else {
+                        final.textContent = "Un temblor acecha y una oscuridad densa te rodea. Escuchas todo y nada a la vez, estás confuso, pero de pronto tu cuerpo se paraliza al ver un ser horripilante y pútrido. Con una risa despiadada termina con tu vida y la oscuridad se cierne en todo Almansa."
+                    }
+               })
     /*Como me ha salido guay, voy a intentar mejorar la animación de la capa de arriba, que ahora mismo, se raya*/
     /*Vale, nuevo problema, ahora lo que pasa es que se destacan todas las letras rojas a la vez y yo quiero que sea cuando
     pasamos el raton por encima. Me voy a basar un poco en mi ejemplo anterior de drag and drop */
