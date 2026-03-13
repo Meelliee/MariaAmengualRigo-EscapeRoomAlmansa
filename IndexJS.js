@@ -109,7 +109,7 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
     acepto.addEventListener("click", () =>{
         /*Vale, ahora mismo es dificil leer las letras como tal, asi que se me ha ocurrido tornar mi pagina en negro para encontrar las letras con el farol*/
         farolillo.style.display = "inline";
-        ocultar.style.display="block";
+        ocultar.style.display="flex";
     });
 
     /*He encontrado la manera de hacer que el farol brille y he querido hacer lo mismo que con el boton, basicamente
@@ -135,7 +135,7 @@ Voy a dejar este codigo comentado aunque no lo use, porque tarde un rato y ya me
     const farol = document.querySelector(".farol");
     const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
 
-    if(farol!=null){
+    
     farol.addEventListener("dragstart", function (){
         elementoArrastrado = farol;
     });
@@ -159,21 +159,34 @@ Voy a dejar este codigo comentado aunque no lo use, porque tarde un rato y ya me
     const zona = document.querySelector(".introduccion");
     const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
 
-    for(let parrafo of parrafosHistoria){
-    zona.addEventListener("mousemove", function(e) {
-        const rect = zona.getBoundingClientRect();
-        let offsetX =e.clientX - rect.left - 25;
-        let offsetY = e.clientY - rect.top - 35;
 
-        farol.style.left = offsetX + "px";
-        farol.style.top = offsetY + "px";
-        
-        if(farolEncendido==true){ /*Para que se revelen solo si el farol esta iluminado*/
-            parrafo.classList.add("textoGris");
-         }
-    });
-}
+    if(farol!=null){
+        zona.addEventListener("mousemove", function(e) {
+            const rect = zona.getBoundingClientRect();
+            let offsetX =e.clientX - rect.left - 25;
+            let offsetY = e.clientY - rect.top - 35;
 
+            farol.style.left = offsetX + "px";
+            farol.style.top = offsetY + "px";
+            
+            if(farolEncendido==true){
+                /*Quiero saber el tamaño del farol y el tamaño del parrafo para saber cuando el farol toca el parrafo y cuando no*/
+                const rectFarol = farol.getBoundingClientRect(); 
+                
+                /*Para que se revelen solo si el farol esta iluminado*/
+                for(let parrafo of parrafosHistoria){
+                    const rectParrafo= parrafo.getBoundingClientRect(); /*Vale y ahora tendre que establecer pues 1. cuando el lado derecho del farol haya pasado el lado iz del parrafo// 2. Cuando el lado izq del farol esté antes que el lado derecho del p */
+                    if(rectFarol.right>rectParrafo.left && rectFarol.left<rectParrafo.right && rectFarol.bottom>rectParrafo.top && rectFarol.top < rectParrafo.bottom ){ /*3. cuando la parte de abajo del farol este mas baja que la parte de arriba del parrafo// 4. Cuando la parte de arriba del farol este antes de la parte de abajo del parrafo */
+                        parrafo.classList.add("textoGris");
+                    }
+                }
+            }
+        });
+
+    }
     /*Como me ha salido guay, voy a intentar mejorar la animación de la capa de arriba, que ahora mismo, se raya*/
     /*Vale, nuevo problema, ahora lo que pasa es que se destacan todas las letras rojas a la vez y yo quiero que sea cuando
-    pasamos el raton por encima */
+    pasamos el raton por encima. Me voy a basar un poco en mi ejemplo anterior de drag and drop */
+
+
+    /*Quiero que aparezca el anciano al darle el boton */
