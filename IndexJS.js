@@ -148,7 +148,7 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
     
     let mensajeOcultoLeido = false;
     let trampillaActivada = false;
-
+    
 
     if(farol!=null && zona!=null){
         zona.addEventListener("mousemove", function(e) {
@@ -214,6 +214,7 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
 
                 /*Debe comprobarse la clave*/
                botonClave.addEventListener("click", function(){
+                    
                     let palabraIntroducida = clave.value;
                     let correcta = elGuia.dataset.password;
                     if(palabraIntroducida == correcta){

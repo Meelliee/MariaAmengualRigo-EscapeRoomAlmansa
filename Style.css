@@ -10,15 +10,7 @@ body, #index{
     background:black;
     color: rgb(180, 180, 180);
 }
-.oculto{
-    position: fixed;
-    top: 0%;
-    left: 1em;
-    display:none;
-    height: 25%;
-    z-index: 9999;
-    top: auto;
-}
+
 
 
 .pagina{
@@ -606,37 +598,39 @@ más estético*/
     position: absolute;
     font-size: 2em;
     z-index: 20;
-    text-shadow:0 0 10px purple;
     color: transparent;
+    transform: translate(-50%, -50%);
+
 }
 
 .respuestaOculta.visible{
-    color: blueviolet;
+    color: rgb(47, 47, 90);
+
 }
 
-.respCorrecta{
-    top: 70%;
-    left: 25%
+#respCorrecta{
+    top: 90%;
+    left: 46%
 }
 
-.respFal1{
-    top: 10%;
+#respFal1{
+    top: 50%;
     left: 15%;
 }
 
-.respFal2{
-    top: 23%;
+#respFal2{
+    top: 40%;
     left: 89%;
 }
 
-.respFal3{
+#respFal3{
     top: 90%;
-    left: 53%;
+    left: 80%;
 }
 
-.respFal4{
-    top: 50%;
-    left: 96%;
+#respFal4{
+    top: 24%;
+    left: 24%;
 }
 
 
@@ -649,7 +643,6 @@ más estético*/
     bottom:0;
     display: none;
     z-index: 9997;
-    display: flex;
     align-items: flex-end;
     gap: 1em;
 }
@@ -657,9 +650,7 @@ más estético*/
 .oculto img{
     height: 35em;
     width: auto;
-    display: block;
-    filter: drop-shadow(0 0 60px rgba(46, 46, 16, 0.747));
-    
+    filter: drop-shadow(0 0 60px rgba(46, 46, 16, 0.747)); 
 }
 
 
@@ -676,6 +667,7 @@ más estético*/
     border-radius: 1em;
     color: rgba(214, 223, 220);
     padding: 2em;
+
 }
 
 .resaltado{
@@ -689,7 +681,7 @@ más estético*/
     border-radius: 1em;
     color: rgba(214, 223, 220);
     padding: 2em;
-    display: block;
+    display: none;
     text-align: center;
     
 }
