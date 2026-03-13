@@ -148,18 +148,21 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
     
     let mensajeOcultoLeido = false;
     let trampillaActivada = false;
-    
+    let resolviendo = false;
 
     if(farol!=null && zona!=null){
         zona.addEventListener("mousemove", function(e) {
-            const rect = zona.getBoundingClientRect();
-            let offsetX =e.clientX - rect.left - 25;
-            let offsetY = e.clientY - rect.top - 35;
+            if(resolviendo==false){
+                const rect = zona.getBoundingClientRect();
+                let offsetX =e.clientX - rect.left - 25;
+                let offsetY = e.clientY - rect.top - 35;
 
-            farol.style.left = offsetX + "px";
-            farol.style.top = offsetY + "px";
-            
-            if(farolEncendido==true){ /*Creo que me petaba de aqui */
+                farol.style.left = offsetX + "px";
+                farol.style.top = offsetY + "px";
+            }
+
+
+            if(farolEncendido==true && resolviendo==false){ /*Creo que me petaba de aqui */
                 /*Quiero saber el tamaño del farol y el tamaño del parrafo para saber cuando el farol toca el parrafo y cuando no*/
                 const rectFarol = farol.getBoundingClientRect(); 
                
@@ -194,6 +197,7 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
                                     
                                     if(trampillaActivada==false){
                                         trampillaActivada=true;
+                                        resolviendo=true;
                                         pista.textContent= "La luz te ha guiado a través de las rocas y una trampilla parece haber aparecido ante ti"
                                         
                                         /*Cambiamos el anciano por el cryptex*/
@@ -201,6 +205,7 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
                                         elGuia.dataset.password="Draugr";
                                         pista.textContent= "Fijándote bien en la trampilla, te das cuenta que hay un cryptex.¿Qué palabra introducirás?";
                                         cryptex.style.display="flex";
+
                                     }
                                 }
                             }
