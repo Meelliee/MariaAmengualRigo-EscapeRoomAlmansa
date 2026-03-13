@@ -110,15 +110,19 @@
 
             <img src="Imagenes/farol.png" draggable="true" class="farol">
             <div class="oculto">
-                <img src="Imagenes/anciano.png" alt="La pista del anciano" id="elGuía">
-                <div id="pista">Los antiguos encriptaron la respuesta. Dijeron algo de <span class="resaltado">usar la luz</span>  para hallarla.</div>
+                <img src="Imagenes/anciano.png" alt="La pista del anciano" id="elGuia">
+            
+                <div class="resolucion">
+                    <div id="pista">Los antiguos encriptaron la respuesta. Dijeron algo de <span class="resaltado">usar la luz</span>  para hallarla.</div>
+                    <div class="cryptex">
+                        <p>¿Qué palabra introducirás?</p>
+                        <input type="text" id="clave">
+                        <button id="botonClave">¿será la correcta?</button>
+                        <p id="final"></p>
+                    </div>
+                </div>
             </div>
-            <div class="cryptex">
-                <p>¿Qué palabra introducirás?</p>
-                <input type="text" id="clave">
-                <button id="botonClave">¿será la correcta?</button>
-                <p id="final"></p>
-            </div>
+            
         </section>
 
     </div>

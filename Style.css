@@ -663,18 +663,55 @@ más estético*/
 }
 
 
+/*Para el cryptex*/
+.resolucion{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
 #pista{
     background: rgba(0, 0, 0, 0.856);
     border: 0.1em solid rgb(65, 119, 128);
     border-radius: 1em;
-    bottom: 50em;
     color: rgba(214, 223, 220);
     padding: 2em;
-    right:20em;
-    margin-bottom: 2em;
 }
 
 .resaltado{
     color: rgb(235, 235, 108);
     font-weight: bold;
 }
+
+.cryptex{
+    background: rgba(0, 0, 0, 0.856);
+    border: 0.1em solid rgb(65, 119, 128);
+    border-radius: 1em;
+    color: rgba(214, 223, 220);
+    padding: 2em;
+    display: block;
+    text-align: center;
+    
+}
+
+.cryptex input{
+    margin-top: 1em;
+    background: rgba(15,15,15,0.8);
+    border: 0.2em solid rgb(74, 13, 116);
+    border-radius: 0.5em;
+    color: grey;
+    padding: 0.5em;
+    text-align: center;
+    outline: none;
+    margin-right: 1em;
+}
+
+.cryptex button{
+    background: rgb(41, 41, 41);
+    color: rgb(202, 183, 8);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.5em;
+}
+

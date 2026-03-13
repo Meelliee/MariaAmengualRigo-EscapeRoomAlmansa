@@ -134,9 +134,20 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
     /*Quiero evitar que sepan la respuesta con el farol que tienen al principio, porque me he dado cuenta de que podrian encontrarla antes de desvelar el mensaje de pista */
     const palabrasOcultas = document.querySelectorAll(".respuestaOculta");
     
+   
+    
+
+    /*Dejo aqui las referencias para la zona del cryptex, la resolucion etc */
+    const elGuia = document.getElementById("elGuia");
+    const cryptex = document.querySelector(".cryptex");
+    const pista = document.getElementById("pista");
+    const clave = document.getElementById("clave");
+    const botonClave=document.getElementById("botonClave");
+    const final = document.getElementById("final"); 
+    
+    
     let mensajeOcultoLeido = false;
     let trampillaActivada = false;
-    
 
 
     if(farol!=null && zona!=null){
@@ -154,40 +165,44 @@ if(acepto !=null && farolillo!=null && ocultar!=null){
                
                 if(mensajeOcultoLeido==false){
                     /*Para que se revelen solo si el farol esta iluminado*/
+
                     for(let parrafo of parrafosHistoria){
                         const rectParrafo= parrafo.getBoundingClientRect(); /*Vale y ahora tendre que establecer pues 1. cuando el lado derecho del farol haya pasado sobre el lado iz del parrafo// 2. Cuando el lado izq del farol esté antes que el lado derecho del p */
+                        
                         if(rectFarol.right>rectParrafo.left && rectFarol.left<rectParrafo.right && rectFarol.bottom>rectParrafo.top && rectFarol.top < rectParrafo.bottom ){ /*3. cuando la parte de abajo del farol este mas baja que la parte de arriba del parrafo// 4. Cuando la parte de arriba del farol este antes de la parte de abajo del parrafo */
                             parrafo.classList.add("textoGris");
                         }
                     }
+
                     let mensajeDesvelado = document.querySelectorAll(".historiaSeccion p.textoGris, .historiaSeccionInversa p.textoGris");
 
                     if(mensajeDesvelado.length == parrafosHistoria.length){
-                        mensajeCompleto = true;
+                        mensajeOcultoLeido = true;
                         farol.src = "Imagenes/Farol2.0.png";
                         farol.style.filter="drop-shadow(0em 0em 5em rgb(154, 3, 255))";
                         pista.textContent ="Oh vaya...pero que hacía esto debajo del agua...—Te entrega el antiguo farol que acabas de encontrar— Parece que los antiguos quieren que busquemos algo más alla de lo que nuestros ojos pueden ver.";
-                        
-                        
-                        /*Tendre que añadir una condicional para comprobar que tenemos el mensajeCompleto desvelado para repetir esto*/                    
-                        if(mensajeCompleto == true){
+                    }    
+                    
+                }else  if(mensajeOcultoLeido == true){      /*Tendre que añadir una condicional para comprobar que tenemos el mensajeOcultoLeido desvelado para repetir esto*/           
                             /*Hago la misma estructura de antes en el for de parrafo, pero con palabras */
                             for(let palabra of palabrasOcultas){
                                 const rectPalabra= palabra.getBoundingClientRect(); /*Vale y ahora tendre que establecer pues 1. cuando el lado derecho del farol haya pasado sobre el lado iz del parrafo// 2. Cuando el lado izq del farol esté antes que el lado derecho del p */
+                                
                                 if(rectFarol.right>rectPalabra.left && rectFarol.left<rectPalabra.right && rectFarol.bottom>rectPalabra.top && rectFarol.top < rectPalabra.bottom ){ /*3. cuando la parte de abajo del farol este mas baja que la parte de arriba del parrafo// 4. Cuando la parte de arriba del farol este antes de la parte de abajo del parrafo */
                                     palabra.classList.add("visible"); /*Y en lugar de texto, añado la clase visible */
                                     /*Quiero hacer que independientemente de la palabra que salga, se cambie la imagen del anciano por la trampilla*/
+                                    
                                     pista.textContent= "La luz te ha guiado a través de las rocas y una trampilla parece haber aparecido ante ti"
-                                    elGuía.src="";
-                                    elGuía.dataset.password="Draugr";
+                                    
+                                    /*Cambiamos el anciano por el cryptex*/
+                                    elGuia.src="Imagenes/trampillaCryptex.png"; 
+                                    elGuia.dataset.password="Draugr";
                                     pista.textContent= "Fijándote bien en la trampilla, te das cuenta que hay un cryptex.¿Qué palabra introducirás?";
                                     botonClave.style.display="block";
                                 }
                             }
                             
                         }
-                    }
-                }
             }
         })
     }
