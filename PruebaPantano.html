@@ -39,9 +39,14 @@
 <!--Me interesa reutilizar la estructura de css asi que mantengo la estructura html aunque no haya carrusel en esta seccion-->
     <div class="main">
         <article class="diapositiva">
-            
+        
             <img class="capaFondo" src="Imagenes/FondoPantano.png">
-            <p class="respuesta">Draugr</p>
+            /*Para que hayan varias respuestas y sea menos obvio*/
+            <p class="respuestaOculta correcta" id="respCorrecta">Draugr</p>
+            <p class="respuestaOculta falsa" id="resFal1">Ritual</p>
+            <p class="respuestaOculta falsa" id="resFal2">Esperanza</p>
+            <p class="respuestaOculta falsa" id="resFal3">Almansa</p>
+            <p class="respuestaOculta falsa" id="resFal4">Aguas</p>
            
             <div class="contenido" id="contenidoPantano"> 
                 <h1>El susurro de las aguas</h1>
@@ -105,10 +110,17 @@
 
             <img src="Imagenes/farol.png" draggable="true" class="farol">
             <div class="oculto">
-                <img src="Imagenes/anciano.png" alt="La pista del anciano">
-                <div id="pista">Los antiguos encriptaron la respuesta. Dijeron algo de usar la luz para hallarla.</div>
+                <img src="Imagenes/anciano.png" alt="La pista del anciano" id="elGuía">
+                <div id="pista">Los antiguos encriptaron la respuesta. Dijeron algo de <span class="resaltado">usar la luz</span>  para hallarla.</div>
+            </div>
+            <div class="cryptex">
+                <p>¿Qué palabra introducirás?</p>
+                <input type="text" id="clave">
+                <button id="botonClave">¿será la correcta?</button>
+                <p id="final"></p>
             </div>
         </section>
+
     </div>
 </div>
 <footer>

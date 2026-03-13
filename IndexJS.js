@@ -158,9 +158,11 @@ Voy a dejar este codigo comentado aunque no lo use, porque tarde un rato y ya me
     const farol=document.querySelector(".farol");
     const zona = document.querySelector(".introduccion");
     const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
+    /*Quiero evitar que sepan la respuesta con el farol que tienen al principio, porque me he dado cuenta de que podrian encontrarla antes de desvelar el mensaje de pista */
+    let mensajeOcultoLeido = false;
+    
 
-
-    if(farol!=null){
+    if(farol!=null && zona!=null){
         zona.addEventListener("mousemove", function(e) {
             const rect = zona.getBoundingClientRect();
             let offsetX =e.clientX - rect.left - 25;
@@ -169,21 +171,30 @@ Voy a dejar este codigo comentado aunque no lo use, porque tarde un rato y ya me
             farol.style.left = offsetX + "px";
             farol.style.top = offsetY + "px";
             
-            if(farolEncendido==true){
+            if(farolEncendido==true && mensajeOcultoLeido==false){
                 /*Quiero saber el tamaño del farol y el tamaño del parrafo para saber cuando el farol toca el parrafo y cuando no*/
                 const rectFarol = farol.getBoundingClientRect(); 
                 
                 /*Para que se revelen solo si el farol esta iluminado*/
                 for(let parrafo of parrafosHistoria){
-                    const rectParrafo= parrafo.getBoundingClientRect(); /*Vale y ahora tendre que establecer pues 1. cuando el lado derecho del farol haya pasado el lado iz del parrafo// 2. Cuando el lado izq del farol esté antes que el lado derecho del p */
+                    const rectParrafo= parrafo.getBoundingClientRect(); /*Vale y ahora tendre que establecer pues 1. cuando el lado derecho del farol haya pasado sobre el lado iz del parrafo// 2. Cuando el lado izq del farol esté antes que el lado derecho del p */
                     if(rectFarol.right>rectParrafo.left && rectFarol.left<rectParrafo.right && rectFarol.bottom>rectParrafo.top && rectFarol.top < rectParrafo.bottom ){ /*3. cuando la parte de abajo del farol este mas baja que la parte de arriba del parrafo// 4. Cuando la parte de arriba del farol este antes de la parte de abajo del parrafo */
                         parrafo.classList.add("textoGris");
                     }
                 }
-            }
-        });
+                let mensajeDesvelado = document.querySelectorAll(".historiaSeccion p.textoGris, .historiaSeccionInversa p.textoGris");
 
+                if(mensajeDesvelado.length == parrafosHistoria.length){
+                    mensajeCompleto = true;
+                    farol.src = "Imagenes/Farol2.0.png";
+                    farol.style.filter="drop-shadow(0em 0em 5em rgb(154, 3, 255))";
+                    pista.textContent ="Oh vaya...pero que hacía esto debajo del agua...—Te entrega el antiguo farol que acabas de encontrar— Parece que los antiguos quieren que busquemos algo más alla de lo que nuestros ojos pueden ver.";
+                    
+                }
+            }
+        })
     }
+
     /*Como me ha salido guay, voy a intentar mejorar la animación de la capa de arriba, que ahora mismo, se raya*/
     /*Vale, nuevo problema, ahora lo que pasa es que se destacan todas las letras rojas a la vez y yo quiero que sea cuando
     pasamos el raton por encima. Me voy a basar un poco en mi ejemplo anterior de drag and drop */

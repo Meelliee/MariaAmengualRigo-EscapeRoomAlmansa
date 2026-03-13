@@ -584,6 +584,8 @@ más estético*/
     filter: none; /*He buscado como poder iluminar el farol*/
 }
 
+
+
 .textoGris{
     color:gray;
 }
@@ -599,9 +601,43 @@ más estético*/
 
 
 
+/*Para las respuestas ocultas del banner*/
+.respuestaOculta{
+    position: absolute;
+    font-size: 2em;
+    z-index: 20;
+    text-shadow:0 0 10px purple;
+    color: transparent;
+}
 
+.respuestaOculta.visible{
+    color: blueviolet;
+}
 
+.respCorrecta{
+    top: 70%;
+    left: 25%
+}
 
+.respFal1{
+    top: 10%;
+    left: 15%;
+}
+
+.respFal2{
+    top: 23%;
+    left: 89%;
+}
+
+.respFal3{
+    top: 90%;
+    left: 53%;
+}
+
+.respFal4{
+    top: 50%;
+    left: 96%;
+}
 
 
 
@@ -636,4 +672,9 @@ más estético*/
     padding: 2em;
     right:20em;
     margin-bottom: 2em;
+}
+
+.resaltado{
+    color: rgb(235, 235, 108);
+    font-weight: bold;
 }
