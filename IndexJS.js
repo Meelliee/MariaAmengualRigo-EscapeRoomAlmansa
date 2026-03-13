@@ -157,7 +157,9 @@ Voy a dejar este codigo comentado aunque no lo use, porque tarde un rato y ya me
         /*Voy a intentar que el farol siga al raton en lugar de hacerlo con drag and drop */
     const farol=document.querySelector(".farol");
     const zona = document.querySelector(".introduccion");
+    const parrafosHistoria = document.querySelectorAll(".historiaSeccion p, .historiaSeccionInversa p");
 
+    for(let parrafo of parrafosHistoria){
     zona.addEventListener("mousemove", function(e) {
         const rect = zona.getBoundingClientRect();
         let offsetX =e.clientX - rect.left - 25;
@@ -165,6 +167,13 @@ Voy a dejar este codigo comentado aunque no lo use, porque tarde un rato y ya me
 
         farol.style.left = offsetX + "px";
         farol.style.top = offsetY + "px";
+        
+        if(farolEncendido==true){ /*Para que se revelen solo si el farol esta iluminado*/
+            parrafo.classList.add("textoGris");
+         }
     });
+}
 
     /*Como me ha salido guay, voy a intentar mejorar la animación de la capa de arriba, que ahora mismo, se raya*/
+    /*Vale, nuevo problema, ahora lo que pasa es que se destacan todas las letras rojas a la vez y yo quiero que sea cuando
+    pasamos el raton por encima */
